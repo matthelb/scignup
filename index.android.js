@@ -1,52 +1,65 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
 var React = require('react-native');
+
 var {
   AppRegistry,
-  StyleSheet,
   Text,
+  TextInput,
   View,
+  NativeModules,
 } = React;
 
-var scignup = React.createClass({
+var SearchResult = React.createClass({
   render: function() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
+      <View>
+        <Text>{this.props.result.principalName}</Text>
+        <Text>{this.props.result.firstName}</Text>
+        <Text>{this.props.result.middleName}</Text>
+        <Text>{this.props.result.lastName}</Text>
       </View>
     );
-  }
+  },
 });
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+var scignup = React.createClass({
+  getInitialState: function() {
+    return {
+      result: {
+        principalName: '',
+        firstName: '',
+        middleName: '',
+        lastName: '',
+      },
+    };
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  render: function() {
+    return (
+      <View>
+        <TextInput ref='uscid' onSubmitEditing={this.handleSearch}/>
+        <SearchResult result={this.state.result}/>
+      </View>
+    );
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  handleSearch: function(e) {
+    var that = this;
+    NativeModules.SearchModule.search(this.refs.uscid.value,
+        function(error) {
+          console.log(error);
+        },
+        function(result) {
+          that.setState({
+            result: {
+              principalName: result[0],
+              firstName: result[1],
+              lastName: result[2],
+              middleName: '',
+            },
+          });
+        }
+    );
+  }
 });
 
 AppRegistry.registerComponent('scignup', () => scignup);

@@ -1221,52 +1221,65 @@ GLOBAL.MutationObserver=undefined;})(
 this);
 __d('scignup/index.android.js',function(global, require, module, exports) {  'use strict';
 
-
-
-
-
 var React=require('react-native/Libraries/react-native/react-native.js');var 
+
 
 AppRegistry=
 
 
 
-React.AppRegistry;var StyleSheet=React.StyleSheet;var Text=React.Text;var View=React.View;
 
-var scignup=React.createClass({displayName:'scignup',
+React.AppRegistry;var Text=React.Text;var TextInput=React.TextInput;var View=React.View;var NativeModules=React.NativeModules;
+
+var SearchResult=React.createClass({displayName:'SearchResult',
 render:function(){
 return (
-React.createElement(View,{style:styles.container},
-React.createElement(Text,{style:styles.welcome},'Welcome to React Native!'),
-
-
-React.createElement(Text,{style:styles.instructions},'To get started, edit index.android.js'),
-
-
-React.createElement(Text,{style:styles.instructions},'Shake or press menu button for dev menu')));}});
+React.createElement(View,null,
+React.createElement(Text,null,this.props.result.principalName),
+React.createElement(Text,null,this.props.result.firstName),
+React.createElement(Text,null,this.props.result.middleName),
+React.createElement(Text,null,this.props.result.lastName)));}});
 
 
 
 
 
+var scignup=React.createClass({displayName:'scignup',
+getInitialState:function(){
+return {
+result:{
+principalName:'',
+firstName:'',
+middleName:'',
+lastName:''}};},
 
 
-var styles=StyleSheet.create({
-container:{
-flex:1,
-justifyContent:'center',
-alignItems:'center',
-backgroundColor:'#F5FCFF'},
 
-welcome:{
-fontSize:20,
-textAlign:'center',
-margin:10},
+render:function(){
+return (
+React.createElement(View,null,
+React.createElement(TextInput,{ref:'uscid',onSubmitEditing:this.handleSearch}),
+React.createElement(SearchResult,{result:this.state.result})));},
 
-instructions:{
-textAlign:'center',
-color:'#333333',
-marginBottom:5}});
+
+
+handleSearch:function(e){
+var that=this;
+NativeModules.SearchModule.search(this.refs.uscid.value,
+function(error){
+console.log(error);},
+
+function(result){
+that.setState({
+result:{
+principalName:result[0],
+firstName:result[1],
+lastName:result[2],
+middleName:''}});});}});
+
+
+
+
 
 
 
