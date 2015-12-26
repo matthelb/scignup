@@ -1,3 +1,3 @@
-rootProject.name = 'scignup'
+rootProject.name = 'SCignup'
 
 include ':app'

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "scignup.app"
-               BlueprintName = "scignup"
-               ReferencedContainer = "container:scignup.xcodeproj">
+               BuildableName = "SCignup.app"
+               BlueprintName = "SCignup"
+               ReferencedContainer = "container:SCignup.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "scignupTests.xctest"
-               BlueprintName = "scignupTests"
-               ReferencedContainer = "container:scignup.xcodeproj">
+               BuildableName = "SCignupTests.xctest"
+               BlueprintName = "SCignupTests"
+               ReferencedContainer = "container:SCignup.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "scignupTests.xctest"
-               BlueprintName = "scignupTests"
-               ReferencedContainer = "container:scignup.xcodeproj">
+               BuildableName = "SCignupTests.xctest"
+               BlueprintName = "SCignupTests"
+               ReferencedContainer = "container:SCignup.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "scignup.app"
-            BlueprintName = "scignup"
-            ReferencedContainer = "container:scignup.xcodeproj">
+            BuildableName = "SCignup.app"
+            BlueprintName = "SCignup"
+            ReferencedContainer = "container:SCignup.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "scignup.app"
-            BlueprintName = "scignup"
-            ReferencedContainer = "container:scignup.xcodeproj">
+            BuildableName = "SCignup.app"
+            BlueprintName = "SCignup"
+            ReferencedContainer = "container:SCignup.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "scignup.app"
-            BlueprintName = "scignup"
-            ReferencedContainer = "container:scignup.xcodeproj">
+            BuildableName = "SCignup.app"
+            BlueprintName = "SCignup"
+            ReferencedContainer = "container:SCignup.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

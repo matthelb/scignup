@@ -12,7 +12,7 @@ var {
   View,
 } = React;
 
-var scignup = React.createClass({
+var SCignup = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ var styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('scignup', () => scignup);
+AppRegistry.registerComponent('SCignup', () => SCignup);
