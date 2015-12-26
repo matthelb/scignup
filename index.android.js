@@ -37,14 +37,15 @@ var scignup = React.createClass({
   render: function() {
     return (
       <View>
-        <TextInput ref='uscid' onSubmitEditing={this.handleSearch}/>
+        <TextInput onSubmitEditing={this.handleSearch} placeholder='USC ID'/>
         <SearchResult result={this.state.result}/>
       </View>
     );
   },
   handleSearch: function(e) {
     var that = this;
-    NativeModules.SearchModule.search(this.refs.uscid.value,
+    console.log(e.nativeEvent.text);
+    NativeModules.SearchModule.search(e.nativeEvent.text,
         function(error) {
           console.log(error);
         },
